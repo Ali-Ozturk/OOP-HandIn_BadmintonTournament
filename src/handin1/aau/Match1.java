@@ -1,4 +1,4 @@
-package com.company;
+package handin1.aau;
 
 import java.util.Random;
 

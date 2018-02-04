@@ -1,4 +1,4 @@
-package com.company;
+package handin1.aau;
 
 public class Player {
     public String firstname;
