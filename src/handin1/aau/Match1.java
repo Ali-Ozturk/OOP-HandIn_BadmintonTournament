@@ -20,14 +20,16 @@ public class Match1 {
 
     // Method to find and return the best player of all players in the match.
     public Player BestPlayer() {
-        return ((Teamblue.BestPlayer().WinLoseRatio() >= Teamred.BestPlayer().WinLoseRatio()) ? Teamblue.BestPlayer() : Teamred.BestPlayer());
+        return ((Teamblue.BestPlayer().WinLoseRatio() >= Teamred.BestPlayer().WinLoseRatio())
+                ? Teamblue.BestPlayer() : Teamred.BestPlayer());
     }
 
     // Method to determine which team have won the match.
     public Team MatchWinner(){
         Random rand = new Random();
-        int RandomNum = rand.nextInt(2); // Declare and assign a number from 0 to 1.
+        int RandomNum = rand.nextInt(2); // Declare and assign a random number from 0 to 1.
 
+        // Match winner is chosen randomly.
         if (RandomNum == 0) {
             // Update player statistics accordingly for winning/losing.
             Teamred.player1.wonmatches += 1;

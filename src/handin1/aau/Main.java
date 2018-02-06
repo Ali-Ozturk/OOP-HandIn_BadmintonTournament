@@ -15,7 +15,7 @@ public class Main {
         // Easier adding of NewLines to use during prints.
         String newLine = System.getProperty("line.separator");
 
-        // Declare and assign the value of the average age of players in team.
+        // Declare and assign the value of the average age of players in a given team.
         double AvgAgeTeam1 = team1.AverageAge();
         double AvgAgeTeam2 = team2.AverageAge();
 
@@ -37,7 +37,8 @@ public class Main {
         Player BestPlayer = match1.BestPlayer();
 
         // Print the player with the best stats in the match.
-        System.out.println("The player with the best stats in this game is: " + BestPlayer.firstname + " " + BestPlayer.lastname + newLine);
+        System.out.println("The player with the best stats in this game is: "
+                + BestPlayer.firstname + " " + BestPlayer.lastname + newLine);
 
         PrintHeader(); // Used to create an header for player statistics.
         PrintPlayerStats(BestPlayer); // Method to print all stats of a specific player.
@@ -49,6 +50,7 @@ public class Main {
 
         // Print winner of match.
         System.out.println("The winner of the match was: " + MatchWinner.Teamname);
+        System.out.println("Listing players of winning team:" + newLine);
 
         // Print header and stats of players of the winning team.
         PrintHeader();
@@ -59,12 +61,17 @@ public class Main {
 
     // Method used to print player a given players statistics in a formatted manner.
     private static void PrintPlayerStats(Player player){
-        System.out.println(String.format("%-12s | %-12s | %-4d | %-4d | %-4d | %-5.2f | %-10s" , player.firstname, player.lastname, player.age, player.wonmatches, player.lostmatches, player.WinLoseRatio(), player.sponsor));
+        System.out.println(String.format("%-12s | %-12s | %-4d | %-4d | %-4d | %-5.2f | %-10s" ,
+                player.firstname, player.lastname, player.age,
+                player.wonmatches, player.lostmatches, player.WinLoseRatio(),
+                player.sponsor));
     }
 
     // Method used for creating a formatted header.
     private static void PrintHeader(){
-        System.out.println(String.format("%-12s | %-12s | %-4s | %-4s | %-4s | %-5s | %-10s" , "FIRST NAME", "LAST NAME", "AGE", "WON", "LOST", "RATIO", "SPONSOR"));
+        System.out.println(String.format("%-12s | %-12s | %-4s | %-4s | %-4s | %-5s | %-10s" ,
+                "FIRST NAME", "LAST NAME", "AGE",
+                "WON", "LOST", "RATIO", "SPONSOR"));
         System.out.println("----------------------------------------------------------------------");
     }
 }
